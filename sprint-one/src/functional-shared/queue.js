@@ -18,7 +18,7 @@ var extend = function(target, source) {
 
 var queueMethods = {};
 
-queueMethods.enqueue = function(uvalue) {
+queueMethods.enqueue = function(value) {
   this.storage[this.tail] = value;
   this.tail++;
 };
