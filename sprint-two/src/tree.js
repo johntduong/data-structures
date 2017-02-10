@@ -2,9 +2,7 @@ var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
   Object.assign(newTree, treeMethods);
-  // your code here
-  newTree.children = [];  // fix me
-
+  newTree.children = []; 
   return newTree;
 };
 
@@ -30,4 +28,7 @@ treeMethods.contains = function(target) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ The time complexity of Tree is constant
+ The time complexity of treeMethds.addChild is constant
+ The time complexity of treeMethods.contains is linear
  */
