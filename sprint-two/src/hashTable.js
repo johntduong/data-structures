@@ -11,16 +11,14 @@ HashTable.prototype.insert = function(k, v) {
     var newBucket = [];
     this._storage[index] = newBucket;
   }
-  
   if (this._storage[index].length > 0) {
     for (var i = 0; i < this._storage[index].length; i++) {
       if (this._storage[index][i][0] === k) {
         this._storage[index][i][1] = v;
       }
     }
-  } else {
-    this._storage[index].push([k, v]);
-  }
+  } 
+  this._storage[index].push([k, v]);
 };
 
 HashTable.prototype.retrieve = function(k) {
