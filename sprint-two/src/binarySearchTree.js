@@ -3,19 +3,16 @@ var BinarySearchTree = function(value) {
   newTree.value = value;
   newTree.left = null;
   newTree.right = null;
-  newTree.duplicates = 0;
   Object.assign(newTree, treeMethods);
   return newTree;
 };
-
-var treeMethods = {};
 
 treeMethods.insert = function(value) {
   var newNodeTree = new BinarySearchTree(value);
 
   //if this.right is undefined AND value is greater than this.value
   if (!this.right && newNodeTree.value > this.value) {
-    //set this.right to newNodeTree (which is new instance)
+    //the right child node of the parent node
     this.right = newNodeTree;
   //if this.right left is undefined AND value is less than this.value
   } else if (!this.left && newNodeTree.value < this.value) {
@@ -53,9 +50,20 @@ treeMethods.contains = function(value) {
   
 };
 
-
+treeMethods.depthFirstLog = function(callback) {
+  callback(this.value);
+  if (this.left) {
+    this.left.depthFirstLog(callback);
+  } 
+  if (this.right) {
+    this.right.depthFirstLog(callback);
+  }
+};
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ The time complexity of the BinarySearchTree is constant
+ The time complexity of treeMethods.insert is linear
+ The time complexity of contains is logarithmic
  */

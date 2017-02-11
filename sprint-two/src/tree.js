@@ -1,8 +1,8 @@
 var Tree = function(value) {
   var newTree = {};
+  Object.assign(newTree, treeMethods); 
   newTree.value = value;
-  Object.assign(newTree, treeMethods);
-  newTree.children = []; 
+  newTree.children = [];
   return newTree;
 };
 
